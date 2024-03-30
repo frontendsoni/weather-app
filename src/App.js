@@ -1,10 +1,11 @@
+import AppBoard from "./components/appboard";
 
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <AppBoard />
+    </>
   );
 }
 
