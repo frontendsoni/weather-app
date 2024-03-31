@@ -172,6 +172,12 @@ scroll-snap-type: x mandatory;
     width: 45px;
     height: 45px;
   }
+  .current_temp {
+    font-size: 52px;
+  }
+  .current_city {
+    font-size: 32px;
+  }
 }
 @media screen and (max-width:321px) {
   .app_wrap {
