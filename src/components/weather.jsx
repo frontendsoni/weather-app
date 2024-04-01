@@ -3,7 +3,7 @@ import humidity_img from '../Assets/humidity.png';
 import wind_img from '../Assets/wind.png';
 
 const Weather = ({weatherData}) => {
-console.log(weatherData);
+//console.log(weatherData);
   return (
     <div className='city_temp'>
       <div className="wheather_img">
