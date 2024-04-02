@@ -72,6 +72,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .serach_icon i {
@@ -134,27 +135,31 @@ li {
   font-size: 12px;
 }
 .forcast_list {
-  width: 100%;
+  width: 100%; 
   white-space: nowrap;
-overflow-x:hidden;
-scroll-snap-type: x mandatory;  
+  overflow-x: hidden;
 }
 
-.forcast_list li {
+.forcast_list .list {
   padding: 10px;
   background-color: var(--background-color);
   border-radius: 15px;
   display: inline-block;
   text-align: center;
-  margin-right: 15px;
-  scroll-snap-align: center;
+  max-width: 60px;
 }
-.forcast_list li img {
+.forcast_list .list img {
   width: 30px;
   margin: 3px 0;
 }
-.forcast_list li span {
+.forcast_list .list span {
   display: block;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 80px;
+  color: var(--text-color);
 }
 
 /* responsive css */
