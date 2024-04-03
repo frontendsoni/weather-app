@@ -9,7 +9,6 @@ import rain_img from '../Assets/rain.png';
 import snow_img from '../Assets/snow.png';
 
 const Forcast = ({data}) => {
-console.log(data);
 
 const daysName = ["Sun", "Mon" , "Tue", "Wed", "Thu", "Fri", "Sat"]
 
@@ -55,6 +54,20 @@ const settings = {
   ],
 };
 
+const groupByDay = (data) => {
+  const groupedData = {};
+  data.list.forEach((item) => {
+    const date = item.dt_txt.split(' ')[0]; 
+    if (!groupedData[date]) {
+      groupedData[date] = item; 
+    }
+  });
+  return Object.values(groupedData);
+};
+
+const dailyData = groupByDay(data);
+
+
 
 const getWeatherImage = (iconCode) => {
   return weatherIconMap[iconCode] || clear_img;
@@ -62,7 +75,7 @@ const getWeatherImage = (iconCode) => {
   return (
     <div className="forcast">
       <Slider {...settings} className="forcast_list">
-        {data.list.splice(0, 7).map((item, index) =>(
+        {dailyData.map((item, index) =>(
           <div key={index} className='list'>
             <span>{daysName[new Date(item.dt_txt).getDay()]}</span>
             <img src={getWeatherImage(item.weather[0].icon)} alt="forcast image" />

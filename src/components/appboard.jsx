@@ -18,8 +18,7 @@ const AppBoard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [weather_icon, setWeatherIcon] = useState('')
 
-//console.log(cordinates);
-//console.log(forcastData);
+
   const key = '2f132fc260785b56d6e2b488ef880c01';
 
   // Function to fetch weather data
@@ -82,7 +81,7 @@ const AppBoard = () => {
       }
 
       const data = await response.json();
-      //console.log(data);
+      
       if(data) {
         setForcastData(data);
         setIsLoading(false);
@@ -96,12 +95,14 @@ const AppBoard = () => {
   useEffect(() => {
     const defaultCity = 'New Delhi';
     getWeatherData(defaultCity); 
+
   }, []);
 
   useEffect(() => {
     if (cordinates) {
-      //console.log(cordinates);
+      
       getForcastData(cordinates);
+
     }
   }, [cordinates]);
 
@@ -112,6 +113,7 @@ const AppBoard = () => {
       if(cordinates) {
         getForcastData(cordinates);
       }
+
     }
   };
 
