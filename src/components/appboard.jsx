@@ -12,11 +12,12 @@ import snow_img from '../Assets/snow.png';
 
 const AppBoard = () => {
   const [city, setCity] = useState('');
+  const [suggestion, setSuggestion] = useState([]);
   const [weatherData, setWeatherData] = useState(null);
   const [cordinates, setCordinates] = useState(null);
   const [forcastData, setForcastData] =useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [weather_icon, setWeatherIcon] = useState('')
+  const [weather_icon, setWeatherIcon] = useState('');
 
 
   const key = '2f132fc260785b56d6e2b488ef880c01';
@@ -31,6 +32,7 @@ const AppBoard = () => {
       }
 
       const data = await response.json();
+      
       if (data) {
         const newCordinates = {
           lat:data.coord.lat,
